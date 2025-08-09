@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Payment Digital Hamz Official</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&display=swap');
+        
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Orbitron', sans-serif;
+            background: url('Payment.jpg/photo-1636955816868-fcb881e57954?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: #00ff41;
+            text-shadow: 0 0 5px #00ff41;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+        }
+        
+        .container {
+            background-color: rgba(0, 0, 0, 0.8);
+            border: 2px solid #00ff41;
+            border-radius: 10px;
+            box-shadow: 0 0 20px #00ff41;
+            padding: 30px;
+            width: 80%;
+            max-width: 600px;
+            text-align: center;
+            position: relative;
+            animation: glow 2s infinite alternate;
+        }
+        
+        .logo {
+            width: 120px;
+            height: 120px;
+            margin-bottom: 20px;
+            border-radius: 50%;
+            border: 2px solid #00ff41;
+            box-shadow: 0 0 15px #00ff41;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            letter-spacing: 3px;
+        }
+        
+        .payment-method {
+            margin: 25px 0;
+            padding: 15px;
+            border: 1px solid #00ff41;
+            border-radius: 5px;
+            transition: all 0.3s;
+        }
+        
+        .payment-method:hover {
+            background-color: rgba(0, 255, 65, 0.1);
+            transform: scale(1.02);
+        }
+        
+        .payment-title {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+        
+        .payment-number {
+            font-size: 1.3rem;
+            letter-spacing: 2px;
+            background-color: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+            display: inline-block;
+        }
+        
+        .copy-btn {
+            background-color: #00ff41;
+            color: #000;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 3px;
+            cursor: pointer;
+            margin-left: 10px;
+            font-family: 'Orbitron', sans-serif;
+            font-weight: bold;
+            transition: all 0.3s;
+        }
+        
+        .copy-btn:hover {
+            background-color: #00cc33;
+            transform: scale(1.05);
+        }
+        
+        footer {
+            margin-top: 30px;
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        @keyframes glow {
+            from {
+                box-shadow: 0 0 20px #00ff41;
+            }
+            to {
+                box-shadow: 0 0 30px #00ff41, 0 0 40px #00ff41;
+            }
+        }
+        
+        .particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+        }
+        
+        .particle {
+            position: absolute;
+            background-color: #00ff41;
+            border-radius: 50%;
+            opacity: 0.5;
+        }
+    </style>
+</head>
+<body>
+    <div class="particles" id="particles"></div>
+    
+    <div class="container">
+        <img src="Hamz.jpg" alt="Logo Perusahaan" class="logo">
+        <h1>PAYMENT DIGITAL HAMZ OFFICIAL</h1>
+        
+        <div class="payment-method">
+            <div class="payment-title">DANA</div>
+            <div class="payment-number">0821 5788 4782</div>
+            <button class="copy-btn" onclick="copyToClipboard('082157884782')">COPY</button>
+        </div>
+        
+        <div class="payment-method">
+            <div class="payment-title">GOPAY</div>
+            <div class="payment-number">0821 5788 4782</div>
+            <button class="copy-btn" onclick="copyToClipboard('082157884782')">COPY</button>
+        </div>
+        
+        <div class="payment-method">
+            <div class="payment-title">OVO</div>
+            <div class="payment-number">0821 5788 4782</div>
+            <button class="copy-btn" onclick="copyToClipboard('082157884782')">COPY</button>
+        </div>
+        
+        <footer>
+            Scan QR code atau transfer ke nomor di atas<br>
+            Konfirmasi pembayaran via WhatsApp: 0821 5788 4782
+        </footer>
+    </div>
+    
+    <audio autoplay loop>
+        <source src="Kamim.mp3" type="audio/mpeg">
+        Browser Anda tidak mendukung elemen audio.
+    </audio>
+    
+    <script>
+        // Membuat partikel
+        function createParticles() {
+            const particlesContainer = document.getElementById('particles');
+            const particleCount = 50;
+            
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.classList.add('particle');
+                
+                // Ukuran acak
+                const size = Math.random() * 5 + 1;
+                particle.style.width = `${size}px`;
+                particle.style.height = `${size}px`;
+                
+                // Posisi acak
+                particle.style.left = `${Math.random() * 100}%`;
+                particle.style.top = `${Math.random() * 100}%`;
+                
+                // Animasi
+                const duration = Math.random() * 20 + 10;
+                particle.style.animation = `float ${duration}s linear infinite`;
+                
+                particlesContainer.appendChild(particle);
+                
+                // Animasi mengambang
+                const keyframes = `
+                    @keyframes float {
+                        0% {
+                            transform: translate(0, 0);
+                            opacity: 0;
+                        }
+                        10% {
+                            opacity: 0.5;
+                        }
+                        90% {
+                            opacity: 0.5;
+                        }
+                        100% {
+                            transform: translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px);
+                            opacity: 0;
+                        }
+                    }
+                `;
+                
+                const style = document.createElement('style');
+                style.innerHTML = keyframes;
+                document.head.appendChild(style);
+            }
+        }
+        
+        // Fungsi copy ke clipboard
+        function copyToClipboard(text) {
+            navigator.clipboard.writeText(text).then(() => {
+                alert('Nomor berhasil disalin: ' + text);
+            }).catch(err => {
+                console.error('Gagal menyalin: ', err);
+            });
+        }
+        
+        // Jalankan saat halaman dimuat
+        window.onload = function() {
+            createParticles();
+            
+            // Tambahkan efek ketik untuk judul
+            const title = document.querySelector('h1');
+            const text = title.textContent;
+            title.textContent = '';
+            
+            let i = 0;
+            const typing = setInterval(() => {
+                if (i < text.length) {
+                    title.textContent += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(typing);
+                }
+            }, 100);
+        };
+    </script>
+</body>
+</html>
